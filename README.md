@@ -21,8 +21,6 @@
 
 Podcastr is a page where you can hear your favorite podcast.
 
-------
-
 ------------
 <h2>🔖 Layout</h2>
 <div align="justify">
