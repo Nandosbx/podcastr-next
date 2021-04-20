@@ -22,9 +22,17 @@
 Podcastr is a page where you can hear your favorite podcast.
 
 ------
+
+------------
+<h2>🔖 Layout</h2>
+<div align="justify">
+
+💻 Check the Web layout on <a href="https://www.figma.com/file/is9KGod2KJ8eINasYTA0ad/Podcastr?node-id=160%3A2761">Figma</a>.
+
+
+------------
+
 <h2>🚀 Technologies</h2>
-
-
 
 This project was developed with:
 
