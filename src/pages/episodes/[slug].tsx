@@ -42,7 +42,7 @@ export default function Episode({ episode }: IEpisodeProps) {
                 />
 
                 <button>
-                    <img src="/play.svg" alt="Tocar episódio" />
+                    <img src="/play.svg" alt="Tocar o episódio" />
                 </button>
             </div>
 
