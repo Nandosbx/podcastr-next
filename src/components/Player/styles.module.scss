@@ -3,7 +3,29 @@
     width: 26.5rem;
     height: 100vh;
 
-    background: var(--purple-500);
+    background: linear-gradient(
+        -45deg,
+        var(--purple-300),
+        var(--purple-400),
+        var(--purple-500),
+        var(--purple-800)
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    //background: var(--purple-500);
     color: var(--white);
 
     display: flex;
@@ -28,6 +50,28 @@
         &.empty {
             opacity: 0.5;
         }
+    }
+}
+
+.currentEpisode {
+    text-align: center;
+
+    img {
+        border-radius: 1.5rem;
+    }
+
+    strong {
+        display: block;
+        margin-top: 2rem;
+        font: 600 1.25rem Lexend, sans-serif;
+        line-height: 1.75rem;
+    }
+
+    span {
+        display: block;
+        margin-top: 1rem;
+        opacity: 0.6;
+        line-height: 1.5rem;
     }
 }
 
@@ -85,13 +129,27 @@
         background: transparent;
         border: 0;
         font-size: 0;
-        outline: none;
+        //outline: none; //Para melhorar a Usabilidade é melhor deixar o outline
+
+        transition: filter 0.2s;
+
+        &.disabled {
+            cursor: default;
+        }
+
+        &:hover:not(:disabled) {
+            filter: brightness(0.8);
+        }
 
         &.playButton {
             width: 4rem;
             height: 4rem;
             background: var(--purple-300);
             border-radius: 1rem;
+
+            &:hover:not(:disabled) {
+                filter: brightness(0.95);
+            }
         }
     }
 }
