@@ -2,7 +2,6 @@
     padding: 0 4rem;
     height: calc(100vh - 6.5rem);
     //overflow-y: scroll;
-    
 
     h2 {
         margin-top: 3rem;
@@ -27,6 +26,10 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
+
+            &:hover {
+                border-color: var(--green-500);
+            }
 
             img {
                 width: 6rem;
@@ -135,6 +138,11 @@
         td {
             font-size: 0.875rem;
 
+            &:hover {
+                border-color: var(--green-500);
+                filter: brightness(0.8);
+            }
+
             img {
                 width: 2.5rem;
                 height: 2.5rem;
@@ -150,7 +158,7 @@
                 font-size: 1rem;
 
                 &:hover {
-                    text-decoration: underline;
+                    text-decoration: none; //underline
                 }
             }
 

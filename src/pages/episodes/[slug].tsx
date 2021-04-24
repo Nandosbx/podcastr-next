@@ -1,10 +1,13 @@
 import { format, parseISO } from 'date-fns'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import Head from 'next/head'
 import Link from 'next/link'
 import { api } from '../../services/api'
+import { usePlayer } from '../../contexts/PlayerContext'
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString'
 import ptBR from 'date-fns/locale/pt-BR'
 import Image from 'next/image'
+import { BsHeart } from 'react-icons/bs'
 
 import styles from './episode.module.scss'
 
@@ -25,8 +28,13 @@ interface IEpisodeProps {
 }
 
 export default function Episode({ episode }: IEpisodeProps) {
+    const { play } = usePlayer()
+
     return (
         <div className={styles.episode}>
+            <Head>
+                <title>{episode.title} | Podcastr</title>
+            </Head>
             <div className={styles.thumbnailContainer}>
                 <Link href="/">
                     <button type="button">
@@ -43,7 +51,11 @@ export default function Episode({ episode }: IEpisodeProps) {
                 />
 
                 <button>
-                    <img src="/play.svg" alt="Tocar o episódio" />
+                    <img
+                        src="/play.svg"
+                        onClick={() => play(episode)}
+                        alt="Tocar o episódio"
+                    />
                 </button>
             </div>
 
@@ -52,6 +64,9 @@ export default function Episode({ episode }: IEpisodeProps) {
                 <span>{episode.members}</span>
                 <span>{episode.publishedAt}</span>
                 <span>{episode.durationAsString}</span>
+                <span>
+                    <BsHeart />
+                </span>
             </header>
 
             <div

@@ -17,7 +17,17 @@ export default function Header() {
                 </a>
             </Link>
             <p>O melhor para você ouvir, sempre.</p>
-            <span>{currentDate}</span>
+
+            <span>
+                {currentDate}
+                <span>
+                    <Link href="/signin">Signin</Link>{' '}
+                </span>
+
+                <span>
+                    <Link href="/signup">Signup</Link>{' '}
+                </span>
+            </span>
         </header>
     )
 }

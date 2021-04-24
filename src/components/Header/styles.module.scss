@@ -18,5 +18,11 @@
     span {
         margin-left: auto;
         text-transform: capitalize;
+
+        a {
+            padding-left: 10px;
+            text-decoration: none;
+            color: var(--purple-800);
+        }
     }
 }
