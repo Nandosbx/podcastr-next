@@ -11,7 +11,7 @@
 </div>
 
 <p align="center">
-<img src=""/>
+<img src="./.github/podcaster-mac.png"/>
 </p>
 
 
